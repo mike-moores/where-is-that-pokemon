@@ -1,6 +1,7 @@
 import * as Path from 'node:path'
 import express from 'express'
 import cors, { CorsOptions } from 'cors'
+import request from 'superagent'
 
 const server = express()
 
@@ -9,6 +10,11 @@ server.get('/api/v1/greeting', (req, res) => {
   const index = Math.floor(Math.random() * greetings.length)
   console.log(index)
   res.json({ greeting: greetings[index] })
+})
+
+server.get('/api/v2/cards', async (req, res) => {
+  const response = await request.get('https://api.pokemontcg.io/v2/cards')
+  res.json(response.body)
 })
 
 server.use(express.json())
