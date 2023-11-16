@@ -1,0 +1,9 @@
+.deck {
+  margin: 40px auto 0px auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-gap: 10px;
+}
+
+.card {
+}
