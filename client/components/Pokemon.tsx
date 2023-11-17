@@ -2,6 +2,7 @@ import { useQuery } from '@tanstack/react-query'
 import { useState, useEffect, useMemo } from 'react'
 import { fetchPokemon } from '../apiClient'
 import type { PokemonData } from '../models/pokemon'
+import Loading from './Loading'
 
 function shuffleArray<T>(inputArray: Array<T>): Array<T> {
   const array = [...inputArray]
@@ -97,7 +98,7 @@ export default function Pokemon() {
   }
 
   if (isLoading || pokemonData == undefined || revealedDeck == undefined) {
-    return <p>Pokemon are loading</p>
+    return <Loading />
   }
 
   const initialDeck = [
@@ -125,7 +126,7 @@ export default function Pokemon() {
 
   return (
     <div>
-      <h2>Pokemon list</h2>
+      <h2>WHERE&apos;S THAT POKEMON?</h2>
       {/* <button onClick={shuffleArray}>New Game</button> */}
       <div className="deck">
         {initialDeck.map((card, index) => (
