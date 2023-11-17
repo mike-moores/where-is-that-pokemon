@@ -2,6 +2,7 @@ import { useQuery } from '@tanstack/react-query'
 import { useState, useEffect } from 'react'
 import { fetchPokemmon } from '../apiClient'
 import type { PokemonData } from '../models/pokemon'
+import Loading from './Loading'
 
 interface selctedCard {
   id: number
@@ -71,7 +72,7 @@ export default function Pokemon() {
   }
 
   if (isLoading) {
-    return <p>Pokemon are loading</p>
+    return <Loading />
   }
 
   const initialDeck = [

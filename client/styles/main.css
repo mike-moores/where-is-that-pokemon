@@ -1,3 +1,15 @@
+body {
+  font-family: 'Press Start 2P', sans-serif;
+  background-color: rgb(246, 230, 82);
+}
+
+.loading {
+  text-align: center;
+
+  width: 60%;
+  margin: auto auto auto auto;
+}
+
 .deck {
   margin: 40px auto 0px auto;
   display: grid;
@@ -6,4 +18,5 @@
 }
 
 .card {
+  border-radius: 10px;
 }
